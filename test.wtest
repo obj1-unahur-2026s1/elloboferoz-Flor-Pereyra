@@ -6,7 +6,7 @@ import feroz.*
 
 describe "Tests de la historia del Lobo Feroz" {
 
-	test "La historia transcurre y Feroz se come a Caperucita" {
+	test "La historia transcurre y feroz se come a Caperucita" {
 		
 		feroz.correr(bosque)
 		feroz.correr(casaAbuelita)
@@ -18,7 +18,7 @@ describe "Tests de la historia del Lobo Feroz" {
 		assert.notThat(feroz.esSaludable())
 	}
 
-	test "Final alternativo 1: El lobo se come al cazador después de Caperucita" {
+	test "Final alternativo 1: El lobo se comera al cazador despues de Caperucita" {
 		
 		feroz.correr(bosque)
 		feroz.correr(casaAbuelita)
