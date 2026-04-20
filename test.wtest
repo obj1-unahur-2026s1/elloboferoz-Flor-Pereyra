@@ -1,0 +1,42 @@
+import abuelita.*
+import canasta.*
+import caperucita.*
+import cazador.*
+import feroz.*
+
+describe "Tests de la historia del Lobo Feroz" {
+
+	test "La historia transcurre y Feroz se come a Caperucita" {
+		
+		feroz.correr(bosque)
+		feroz.correr(casaAbuelita)
+		feroz.comer(abuelita)
+		caperucita.caerManzana()
+		feroz.comer(caperucita)
+		
+		assert.equals(19.1, feroz.peso())
+		assert.notThat(feroz.esSaludable())
+	}
+
+	test "Final alternativo 1: El lobo se come al cazador después de Caperucita" {
+		
+		feroz.correr(bosque)
+		feroz.correr(casaAbuelita)
+		feroz.comer(abuelita)
+		caperucita.caerManzana()
+		feroz.comer(caperucita)
+		feroz.comer(cazador)
+		
+		assert.equals(28.1, feroz.peso())
+		assert.that(feroz.esSaludable())
+	}
+
+	test "Final alternativo 2: El cazador provoca una crisis" {
+	
+		feroz.comer(abuelita)
+		cazador.dispararAlAire(feroz)
+		
+		assert.equals(10, feroz.peso())
+		assert.notThat(feroz.esSaludable())
+	}
+}
